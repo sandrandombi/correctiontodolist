@@ -17,15 +17,15 @@ function addTask(e) {
     // fonction qui empêche la recharge de la page quand on soumet 
     // le formulaire
     e.preventDefault()
-//    mettre les données du localstorage dans une variable array
+    //    mettre les données du localstorage dans une variable array
     let array = getData()
     //  vérifier si l'élément existe déjà dans le tableau
-    if (!array.find(el => el === task.value) && task.value !== ""){
+    if (!array.find((el) => el === task.value) && task.value !== "") {
         array.push(task.value)
         // Mettre à jour le localstorage
         localStorage.setItem('data', JSON.stringify(array))
         // Vider le champ de saisie
-        task.value =""
+        task.value = ""
         // Retourner le curseur vers le champ de saisie
         task.focus()
         // Appeler la méthode displayTask pour mettre l'affichage à jour
@@ -35,12 +35,12 @@ function addTask(e) {
 // Une fonction qui sert à afficher les données
 function displayTask() {
     // On vide la liste des items
-    liste.innerHTML = ""
+    liste.innerHTML = "";
     let array = getData()
     // Itération (parcourir) du  tableau array et 
     // appeler la fonction createElement() 
     for (let task of array) {
-        createElement(task)
+        createElement(task);
     }
 }
 // Une fonction qui a pour rôle de créer des <li> et des <button>
@@ -50,7 +50,7 @@ function createElement(xy) {
     let btn = document.createElement('button')
     btn.textContent = 'Supprimer'
     li.appendChild(btn)
-    btn.addEventListener('click',function(){
+    btn.addEventListener('click', function () {
         deleteTask(xy)
     })
     liste.appendChild(li)
@@ -61,10 +61,10 @@ function deleteTask(task) {
     // Récupérer l'indice de l'élément à supprimer avec la méthode indexOf()
     let index = array.indexOf(task)
     // Supprimer l'élément avec la méthode splice()
-    array.splice(index,1)
+    array.splice(index, 1)
     // mettre à jour les données
     localStorage.setItem('data', JSON.stringify(array))
-    displayTask()
+    displayTask();
 }
 // Appeler la fonction au chargement de la page
 displayTask()
