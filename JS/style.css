@@ -10,7 +10,7 @@
     padding: 10px;
     font-size: 20px;
     border-radius: 20px;
-    background-color: rgb(102, 118, 121);
+    background-color: #82cedb;
     
 
 }
@@ -22,15 +22,16 @@ li{
 }
 
 li:hover{
-    background-color: #af78e2;
+    background-color: hsl(180, 60%, 74%);
 }
 li button{
     position: absolute;
-    right: 5px;
+    right: 15px;
     border-radius: 20px;
 
 }
 button {
     cursor: pointer;
-    background-color: rgb(169, 238, 238);
+    background-color: #d8a9ee;
+    padding: 10px;
 }
